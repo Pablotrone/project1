@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Публикации | Argus</title>
+    <link rel="stylesheet" href="css/publication.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header class="publication-header">
+        <div class="container">
+            <h1>ОБЗОРЫ ПРОФЕССИОНАЛЬНЫХ ДОСТИЖЕНИЙ ПРАКТИК</h1>
+            <p class="subtitle">Последние исследования, статьи и идеи нашей команды</p>
+        </div>
+    </header>
+
+    <main class="publication-container">
+        <div class="container">
+            <div class="publication-filter">
+                <input type="text" id="searchInput" placeholder="Поиск публикаций...">
+                <select id="yearFilter">
+                    <option value="Все года">Все года</option>
+                    <option value="2025">2025</option>
+                    <option value="2024">2024</option>
+                    <option value="2023">2023</option>
+                    <option value="2022">2022</option>
+                    <option value="2021">2021</option>
+                    <option value="2020">2020</option>
+                </select>
+            </div>
+
+            <div class="publication-list" id="publicationList">
+                <!-- Publications will be loaded here -->
+            </div>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <p>&copy; 2025 Argus. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/publication.js"></script>
+</body>
+</html>

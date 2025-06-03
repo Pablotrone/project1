@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Получить консультацию</title>
+    <link rel="stylesheet" href="css/consultation.css">
+</head>
+<body>
+
+    <div class="consultation-container">
+
+        <!-- Шаг 1: Выбор типа консультации -->
+        <h2>Выберите тип консультации</h2>
+        <div class="button-group">
+            <button class="consultation-type" data-type="oral">Устная консультация</button>
+            <button class="consultation-type" data-type="written">Письменная консультация</button>
+        </div>
+
+        <!-- Шаг 2 (только если выбрана устная): Выбор формата устной консультации -->
+        <div id="form-oral" class="hidden">
+            <h3>Выберите формат устной консультации</h3>
+            <div class="button-group">
+                <button class="oral-type" data-format="inperson">Очная встреча</button>
+                <button class="oral-type" data-format="remote">Удалённая консультация</button>
+            </div>
+        </div>
+
+        <!-- Форма для письменной консультации -->
+        <form id="form-written" class="consultation-form hidden">
+            <h3>Письменная консультация</h3>
+            <input type="text" name="full_name" placeholder="ФИО" required>
+            <input type="email" name="email" placeholder="Электронная почта" required>
+            <input type="tel" name="phone" placeholder="Номер телефона (по желанию)">
+            <select name="topic" required>
+                <option value="">Выберите тему консультации</option>
+                <option>Арбитраж</option>
+                <option>Уголовное дело</option>
+                <option>Гражданский иск</option>
+                <option>Наследственные дела</option>
+                <option>Трудовые споры</option>
+            </select>
+            <textarea name="description" placeholder="Описание вопроса" required></textarea>
+            <input type="file" name="documents" multiple>
+            <button type="submit">Отправить</button>
+        </form>
+
+        <!-- Форма для устной очной консультации -->
+        <form id="form-oral-inperson" class="consultation-form hidden">
+            <h3>Очная консультация</h3>
+            <input type="text" name="full_name" placeholder="ФИО" required>
+            <input type="email" name="email" placeholder="Электронная почта" required>
+            <input type="tel" name="phone" placeholder="Номер телефона (по желанию)">
+            <label>Выберите дату и время:</label>
+            <input type="datetime-local" name="datetime" required>
+            <button type="submit">Записаться</button>
+        </form>
+
+        <!-- Форма для устной удалённой консультации -->
+        <form id="form-oral-remote" class="consultation-form hidden">
+            <h3>Удалённая консультация</h3>
+            <input type="text" name="full_name" placeholder="ФИО" required>
+            <input type="email" name="email" placeholder="Электронная почта" required>
+            <input type="tel" name="phone" placeholder="Номер телефона (по желанию)">
+            <label>Выберите дату и время:</label>
+            <input type="datetime-local" name="datetime" required>
+            <select name="contact_method" required>
+                <option value="">Предпочитаемый способ связи</option>
+                <option>Видеозвонок (Zoom)</option>
+                <option>WhatsApp</option>
+                <option>Telegram</option>
+                <option>Телефонный звонок</option>
+            </select>
+            <button type="submit">Записаться</button>
+        </form>
+
+    </div>
+
+    <script src="js/consultation.js"></script>
+</body>
+</html>

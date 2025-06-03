@@ -1,0 +1,85 @@
+body {
+    background-image: url('../img/bcg4.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed; /* опционально — фон остаётся на месте при скролле */
+    line-height: 1.6;
+    color: #0a0a0a;
+    background-color: #f9f9f9;
+}
+
+.consultation-container {
+    max-width: 600px;
+    margin: 2em auto;
+    padding: 1em;
+    font-family: Arial, sans-serif;
+}
+
+.button-group {
+    display: flex;
+    gap: 1em;
+    margin-bottom: 1.5em;
+}
+
+button.consultation-type,
+button.oral-type {
+    flex: 1;
+    padding: 1em;
+    border: 2px solid #161614;
+    background-color: rgb(248, 233, 149);
+    color: #080808;
+    font-size: 1.1em;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+button.consultation-type:hover,
+button.oral-type:hover {
+    background-color: #554468;
+    color: white;
+}
+
+button.consultation-type.active,
+button.oral-type.active {
+    background-color: #554468;
+    color: white;
+    border-color: #004494;
+}
+
+.consultation-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+
+.consultation-form input,
+.consultation-form select,
+.consultation-form textarea {
+    padding: 0.8em;
+    font-size: 1em;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.consultation-form button[type="submit"] {
+    background-color: #2b2a81;
+    color: white;
+    border: none;
+    padding: 1em;
+    font-size: 1.1em;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.consultation-form button[type="submit"]:hover {
+    background-color: #41909e;
+}
+
+.hidden {
+    display: none;
+}
