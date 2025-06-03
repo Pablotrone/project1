@@ -5,6 +5,7 @@
 │   ├── __init__.py
 │   ├── models.py
 │   ├── tests.py
+│   ├── urls.py
 │   └── views.py
 ├── backend
 │   ├── asgi.py
@@ -12,7 +13,6 @@
 │   ├── settings.py
 │   ├── urls.py
 │   └── wsgi.py
-├── claude
 ├── consultations
 │   ├── admin.py
 │   ├── apps.py
@@ -31,13 +31,15 @@
 │   └── views.py
 ├── requirements.txt
 ├── structure.txt
-├── users
-│   ├── admin.py
-│   ├── apps.py
-│   ├── __init__.py
-│   ├── models.py
-│   ├── tests.py
-│   └── views.py
-└── yookassa
+└── users
+    ├── admin.py
+    ├── apps.py
+    ├── constants.py
+    ├── __init__.py
+    ├── models.py
+    ├── serializers.py
+    ├── tests.py
+    ├── validators.py
+    └── views.py
 
-6 directories, 35 files
+6 directories, 37 files
