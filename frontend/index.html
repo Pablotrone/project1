@@ -12,15 +12,41 @@
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
+    <link rel="stylesheet" href="css/vars.css">
+    <link rel="stylesheet" href="css/grid.css">
     <link rel="stylesheet" href="css/main.css">
     <script src="js/app.js" defer></script>
-
 </head>
 <body>
 
     <div class="swiper slider">
 
-        <div class="slider-ui">
+        <!-- Floating header for non-home sections -->
+        <div class="floating-header" id="floatingHeader">
+            <a href="#" class="floating-logo" id="floatingLogoLink">
+                <img src="img/logo.svg" alt="Argus" class="logo-image">
+                <div class="logo-text-wrapper">
+                    <span class="logo-text-top">ARGUS</span>
+                    <span class="logo-text-bottom">LEGAL ADVICE OFFICE</span>
+                </div>
+            </a>
+            <button class="floating-burger anim-menu-btn" id="floatingBurger">
+                <i class="anim-menu-btn__icon anim-menu-btn__icon--close"></i>
+            </button>
+        </div>
+
+        <!-- Floating mobile menu -->
+        <nav class="floating-menu" id="floatingMenu">
+            <ul>
+                <li><a href="#home">Главная</a></li>
+                <li><a href="#about">О нас</a></li>
+                <li><a href="#practices">Практики</a></li>
+                <li><a href="#contacts">Контакты</a></li>
+            </ul>
+        </nav>
+
+        <!-- Header only visible on home section -->
+        <div class="slider-ui home-only">
 
             <div class="container header-wrapper">
 
@@ -47,23 +73,16 @@
                                     <li><a href="#contacts">Контакты</a></li>
                                 </ul>
                             </nav>
-                            <a href="consultation.html" class="button button--top">Запись на консультацию</a>
+                            <a href="consultation.html" class="button--consultation">Запись на консультацию</a>
                             <div class="auth-buttons">
-                                <button id="loginBtn" class="button button--top">Войти</button>
-                                <button id="registerBtn" class="button button--top">Регистрация</button>
+                                <button id="loginBtn" class="auth-btn auth-btn--login">Войти</button>
+                                <button id="registerBtn" class="auth-btn auth-btn--register">Регистрация</button>
                                 <div id="userProfile" class="user-profile" style="display: none;">
                                     <span id="userName"></span>
-                                    <button id="logoutBtn" class="button button--top">Выйти</button>
+                                    <button id="logoutBtn" class="auth-btn auth-btn--logout">Выйти</button>
                                 </div>
                             </div>
                         </div>
-
-                        <div class="col col--center">
-                            <button class="submenu anim-menu-btn">
-                                <i class="anim-menu-btn__icon anim-menu-btn__icon--close"></i>
-                            </button>
-                        </div>
-
                     </div>
                 </div>
                 <div class="header-content">
@@ -92,83 +111,182 @@
                 <div class="slider__layer" style="background-image: url(img/bcg.png);"></div>
             
                 <section class="about-section">
-                    <div class="about-section__inner">
-                        <h2>ЗАЩИТА ВАШИХ ПРАВ – НАША МИССИЯ</h2>
-                        <p>Адвокатская консультация «Аргус» Санкт-Петербургской городской коллегии адвокатов создана в 1999 году и является одной из старейших консультаций в составе Адвокатской палаты Санкт-Петербурга.
-                            Свое название консультация получила в честь Панопта - всевидящего Аргуса (Argus), символизирующего бдительность, непоколебимую преданность и способность видеть истину сквозь любые сложности. 
-                            В свою очередь наши адвокаты применяют данные принципы, чтобы защищать интересы доверителей независимо от сложности дела.
-                            Наша команда профессионалов обладает глубокими знаниями в различных областях права, что позволяет предлагать доверителям комплексные решения для разрешения любых юридических задач.
-                            Сегодня наша специализация охватывает гражданское, корпоративное, инвестиционное право, мы оказываем юридическую помощь как при ведении арбитражных и общегражданских дел любой сложности, так и осуществляем правовой консалтинг. </p>
-                            
-                            <h2>НАШИ ПРИНЦИПЫ</h2>
-                            <p>• Бдительность -
-                            мы всегда внимательны к деталям и никогда не упускаем важные аспекты дела!</p>
-                            
-                            <p>• Преданность -
-                            интересы наших доверителей – наш главный приоритет!</p>
-                            
-                            <p>• Справедливость -
-                            обогащение одного недопустимо в ущерб другому лицу
-                            «Aequum est neminem cum alterius detrimento et injuria fieri locupletiorem»</p>
-                            
-                            <p>За время работы мы завоевали уважение большого числа доверителей и ценим доверие к нашей профессиональной деятельности.
-                            </p>
+                    <div class="about-section__container">
+                        <!-- Main Content Grid -->
+                        <div class="about-grid">
+                            <!-- Left Column - Mission & Story -->
+                            <div class="about-column about-column--left">
+                                <div class="mission-block animate-fade-up" data-delay="0">
+                                    <h2 class="section-title">
+                                        <span class="title-accent">ЗАЩИТА ВАШИХ ПРАВ</span>
+                                        <span class="title-main">НАША МИССИЯ</span>
+                                    </h2>
+
+                                    <div class="mission-content">
+                                        <p class="lead-text">
+                                            Адвокатская консультация «Аргус» — одна из старейших консультаций 
+                                            Санкт-Петербургской городской коллегии адвокатов с 1999 года.
+                                        </p>
+
+                                        <div class="story-highlights">
+                                            <div class="highlight-item animate-slide-left" data-delay="200">
+                                                <div class="highlight-icon">👁</div>
+                                                <div class="highlight-text">
+                                                    <strong>Всевидящий Аргус</strong> — символ бдительности и способности видеть истину
+                                                </div>
+                                            </div>
+
+                                            <div class="highlight-item animate-slide-left" data-delay="400">
+                                                <div class="highlight-icon">⚖️</div>
+                                                <div class="highlight-text">
+                                                    <strong>Комплексные решения</strong> в гражданском, корпоративном и инвестиционном праве
+                                                </div>
+                                            </div>
+
+                                            <div class="highlight-item animate-slide-left" data-delay="600">
+                                                <div class="highlight-icon">🏛️</div>
+                                                <div class="highlight-text">
+                                                    <strong>Арбитражные дела</strong> любой сложности и правовой консалтинг
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Right Column - Principles -->
+                            <div class="about-column about-column--right">
+                                <div class="principles-block animate-fade-up" data-delay="300">
+                                    <h2 class="section-title principles-title">
+                                        <span class="title-main">НАШИ ПРИНЦИПЫ</span>
+                                    </h2>
+
+                                    <div class="principles-grid">
+                                        <div class="principle-card animate-scale-up" data-delay="500">
+                                            <div class="principle-icon">
+                                                <div class="icon-bg"></div>
+                                                <span>🔍</span>
+                                            </div>
+                                            <h3>Бдительность</h3>
+                                            <p>Внимательность к деталям и важным аспектам дела</p>
+                                        </div>
+
+                                        <div class="principle-card animate-scale-up" data-delay="700">
+                                            <div class="principle-icon">
+                                                <div class="icon-bg"></div>
+                                                <span>🤝</span>
+                                            </div>
+                                            <h3>Преданность</h3>
+                                            <p>Интересы доверителей — наш главный приоритет</p>
+                                        </div>
+
+                                        <div class="principle-card animate-scale-up" data-delay="900">
+                                            <div class="principle-icon">
+                                                <div class="icon-bg"></div>
+                                                <span>⚖️</span>
+                                            </div>
+                                            <h3>Справедливость</h3>
+                                            <p>Недопустимость обогащения в ущерб другому лицу</p>
+                                            <div class="latin-quote">
+                                                "Aequum est neminem cum alterius detrimento et injuria fieri locupletiorem"
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="trust-statement animate-fade-up" data-delay="1100">
+                                        <div class="statement-line"></div>
+                                        <p>За время работы мы завоевали уважение большого числа доверителей и ценим доверие к нашей профессиональной деятельности.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Decorative Elements -->
+                        <div class="decorative-elements">
+                            <div class="deco-line deco-line--1"></div>
+                            <div class="deco-line deco-line--2"></div>
+                            <div class="deco-dot deco-dot--1"></div>
+                            <div class="deco-dot deco-dot--2"></div>
+                            <div class="floating-orb floating-orb--1"></div>
+                            <div class="floating-orb floating-orb--2"></div>
+                            <div class="floating-orb floating-orb--3"></div>
+                        </div>
                     </div>
                 </section>
             </div>
             <div class="swiper-slide slider__item" id="practices">
                 <div class="slider__layer" style="background-image: url(img/bcg4.png);"></div>
 
-                <!-- Добавляем горизонтальный свайп в 3-ю секцию -->
+                <!-- Enhanced Horizontal Swiper with Wow Effects -->
                 <div class="horizontal-swiper-container">
                     <div class="swiper horizontal-swiper">
                         <div class="swiper-wrapper">
                             <div class="swiper-slide horizontal-slide">
-                                <div class="slide-content">
+                                <div class="slide-content practice-card">
+                                    <div class="practice-icon">⚖️</div>
                                     <h3>СУДЕБНО-АРБИТРАЖНАЯ ПРАКТИКА</h3>
-                                    <p>Адвокаты АК «Аргус» решают сложные задачи в различных областях права, включая корпоративные споры, споры, возникающие в предпринимательской деятельности, в процедурах банкротства, в том числе споры, связанные с привлечением к субсидиарной ответственности контролирующих должника лиц, а также споры с участием иностранных лиц. </p>
+                                    <div class="practice-divider"></div>
+                                    <p>Адвокаты АК «Аргус» решают сложные задачи в различных областях права, включая корпоративные споры, споры, возникающие в предпринимательской деятельности, в процедурах банкротства, в том числе споры, связанные с привлечением к субсидиарной ответственности контролирующих должника лиц, а также споры с участием иностранных лиц.</p>
+                                    <div class="practice-accent"></div>
                                 </div>
                             </div>
                             <div class="swiper-slide horizontal-slide">
-                                <div class="slide-content">
+                                <div class="slide-content practice-card">
+                                    <div class="practice-icon">🏢</div>
                                     <h3>КОРПОРАТИВНОЕ ПРАВО</h3>
-                                    <p>Адвокаты АК «Аргус» предоставляют комплексные юридические консультации и уникальные решения по вопросам разработки и совершенствования системы корпоративного управления, отвечающей интересам клиента, сопровождению корпоративных сделок и общим вопросам корпоративного права. </p>
+                                    <div class="practice-divider"></div>
+                                    <p>Адвокаты АК «Аргус» предоставляют комплексные юридические консультации и уникальные решения по вопросам разработки и совершенствования системы корпоративного управления, отвечающей интересам клиента, сопровождению корпоративных сделок и общим вопросам корпоративного права.</p>
+                                    <div class="practice-accent"></div>
                                 </div>
                             </div>
                             <div class="swiper-slide horizontal-slide">
-                                <div class="slide-content">
+                                <div class="slide-content practice-card">
+                                    <div class="practice-icon">🏠</div>
                                     <h3>ПРАВОВАЯ ЭКСПЕРТИЗА И СОПРОВОЖДЕНИЕ СДЕЛОК В СФЕРЕ НЕДВИЖИМОСТИ</h3>
+                                    <div class="practice-divider"></div>
                                     <p>Адвокаты АК «Аргус» оказывают услуги по структурированию и комплексному сопровождению сделок в сфере недвижимости, в том числе судебное и досудебное сопровождение споров, вытекающих из арендных отношений и иных договоров, связанных с объектами недвижимости.</p>
+                                    <div class="practice-accent"></div>
                                 </div>
                             </div>
                             <div class="swiper-slide horizontal-slide">
-                                <div class="slide-content">
+                                <div class="slide-content practice-card">
+                                    <div class="practice-icon">📜</div>
                                     <h3>ПРАКТИКА ПО ДЕЛАМ О НАСЛЕДСТВЕ</h3>
-                                    <p>Адвокаты АК «Аргус» оказывают содействие в оформлении прав на наследство на территории РФ как гражданам РФ, так и иностранным гражданам, а также на территории зарубежных стран как с участием граждан РФ, так и иностранных граждан. </p>
+                                    <div class="practice-divider"></div>
+                                    <p>Адвокаты АК «Аргус» оказывают содействие в оформлении прав на наследство на территории РФ как гражданам РФ, так и иностранным гражданам, а также на территории зарубежных стран как с участием граждан РФ, так и иностранных граждан.</p>
+                                    <div class="practice-accent"></div>
                                 </div>
                             </div>
                             <div class="swiper-slide horizontal-slide">
-                                <div class="slide-content">
+                                <div class="slide-content practice-card">
+                                    <div class="practice-icon">💰</div>
                                     <h3>ИНВЕСТИЦИИ</h3>
-                                    <p>Адвокаты АК «Аргус» обеспечивают правовое сопровождение инвестиционных проектов на всех стадиях, в том числе разработку организационной и корпоративной структур проекта с учетом интересов инвестора, создание специализированных финансовых обществ, сопровождение процедуры выпуска цифровых финансовых активов. Создание наследственных и личных фондов, контроль за надлежащим управлением фондами, а также разработка иных механизмов защиты имущества и прав собственников, выгодоприобретателей и иных правообладателей.</p>
+                                    <div class="practice-divider"></div>
+                                    <p>Адвокаты АК «Аргус» обеспечивают правовое сопровождение инвестиционных проектов на всех стадиях, в том числе разработку организационной и корпоративной структур проекта с учетом интересов инвестора, создание специализированных финансовых обществ, сопровождение процедуры выпуска цифровых финансовых активов.</p>
+                                    <div class="practice-accent"></div>
                                 </div>
                             </div>
                             <div class="swiper-slide horizontal-slide">
-                                <div class="slide-content">
+                                <div class="slide-content practice-card">
+                                    <div class="practice-icon">📊</div>
                                     <h3>БАНКРОТСТВО</h3>
-                                    <p>Адвокаты АК «Аргус» обладают значительным опытом по сопровождению процедур банкротства юридических лиц, в том числе: разработка стратегии банкротства, в том числе предусматривающей привлечение инвесторов, представительство в спорах о привлечении к субсидиарной ответственности ответственных лиц, учредителей должника, иных контролирующих должника лиц, противодействие выводу активов недобросовестными должниками, оказание содействия кредиторам в рамках их отношений с несостоятельными компаниями, в том числе включение в реестр требований кредиторов и представительство на собрании кредиторов.</p>
+                                    <div class="practice-divider"></div>
+                                    <p>Адвокаты АК «Аргус» обладают значительным опытом по сопровождению процедур банкротства юридических лиц, в том числе: разработка стратегии банкротства, в том числе предусматривающей привлечение инвесторов, представительство в спорах о привлечении к субсидиарной ответственности ответственных лиц.</p>
+                                    <div class="practice-accent"></div>
                                 </div>
                             </div>
                             <div class="swiper-slide horizontal-slide">
-                                <div class="slide-content">
+                                <div class="slide-content practice-card">
+                                    <div class="practice-icon">❤️</div>
                                     <h3>PRO BONO</h3>
+                                    <div class="practice-divider"></div>
                                     <p>АК «Аргус» стремится применять свои юридические знания, ресурсы и опыт для оказания правовой поддержки значимых социальных и культурных проектов, а также для восстановления справедливости лиц, нуждающихся в защите.</p>
+                                    <div class="practice-accent"></div>
                                 </div>
                             </div>
                         </div>
-                        <!-- Добавляем пагинацию -->
+                        <!-- Enhanced pagination and navigation -->
                         <div class="swiper-pagination"></div>
-                        <!-- Добавляем кнопки навигации -->
                         <div class="swiper-button-next"></div>
                         <div class="swiper-button-prev"></div>
                     </div>
@@ -181,26 +299,36 @@
                     <div class="contacts-section__inner">
                         <div class="contacts-container">
                             <h2 class="contacts-title">КОНТАКТЫ</h2>
-                        
+                            
+                            <!-- Enhanced contact cards with wow effects -->
                             <div class="contacts-info">
-                                <div class="contact-item">
-                                    <i class="fas fa-phone-alt contact-icon"></i>
+                                <div class="contact-item animate-contact" data-delay="0">
+                                    <div class="contact-icon-wrapper">
+                                        <i class="fas fa-phone-alt contact-icon"></i>
+                                        <div class="icon-ripple"></div>
+                                    </div>
                                     <div>
                                         <h3>Телефон</h3>
                                         <a href="tel:+78121234567" class="contact-link">+7 (812) 123-45-67</a>
                                     </div>
                                 </div>
                             
-                                <div class="contact-item">
-                                    <i class="fas fa-envelope contact-icon"></i>
+                                <div class="contact-item animate-contact" data-delay="200">
+                                    <div class="contact-icon-wrapper">
+                                        <i class="fas fa-envelope contact-icon"></i>
+                                        <div class="icon-ripple"></div>
+                                    </div>
                                     <div>
                                         <h3>Email</h3>
                                         <a href="mailto:info@argus-law.ru" class="contact-link">info@argus-law.ru</a>
                                     </div>
                                 </div>
                             
-                                <div class="contact-item">
-                                    <i class="fas fa-map-marker-alt contact-icon"></i>
+                                <div class="contact-item animate-contact" data-delay="400">
+                                    <div class="contact-icon-wrapper">
+                                        <i class="fas fa-map-marker-alt contact-icon"></i>
+                                        <div class="icon-ripple"></div>
+                                    </div>
                                     <div>
                                         <h3>Адрес</h3>
                                         <a href="https://yandex.ru/maps/?text=196084%2C%20Санкт-Петербург%2C%20Московский%20пр.%2C%20109" target="_blank" class="contact-link">
@@ -209,6 +337,13 @@
                                     </div>
                                 </div>
                             </div>
+                            
+                            <!-- Enhanced decorative elements -->
+                            <div class="contacts-decoration">
+                                <div class="deco-circle deco-circle--1"></div>
+                                <div class="deco-circle deco-circle--2"></div>
+                                <div class="deco-line-contact"></div>
+                            </div>
                         </div>
                     </div>
                 </section>
@@ -216,6 +351,8 @@
 
         </div>
     </div>
+
+    <!-- Enhanced Auth Modal -->
     <div class="auth-modal" id="authModal">
         <div class="auth-modal-content">
             <span class="close-modal">&times;</span>
@@ -234,7 +371,7 @@
                     <label for="loginPassword">Пароль</label>
                     <input type="password" id="loginPassword" required>
                 </div>
-                <button type="submit" class="button">Войти</button>
+                <button type="submit" class="button auth-submit-btn">Войти</button>
                 <div class="auth-message" id="loginMessage"></div>
             </form>
 
@@ -264,7 +401,7 @@
                     <label for="confirmPassword">Подтвердите пароль</label>
                     <input type="password" id="confirmPassword" required>
                 </div>
-                <button type="submit" class="button">Зарегистрироваться</button>
+                <button type="submit" class="button auth-submit-btn">Зарегистрироваться</button>
                 <div class="auth-message" id="registerMessage"></div>
             </form>
         </div>

@@ -1,6 +1,6 @@
 :root {
     --grid-width: 100%;
-    --grid-gutter: none;
+    --grid-gutter: 0px;
 }
 
 .container {
@@ -33,4 +33,66 @@
 .col--right {
     display: flex;
     justify-content: right;
+}
+
+/* Enhanced Grid System */
+.col--left {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.col--middle {
+    display: flex;
+    align-items: center;
+}
+
+.col--top {
+    display: flex;
+    align-items: flex-start;
+}
+
+.col--bottom {
+    display: flex;
+    align-items: flex-end;
+}
+
+/* Responsive Grid Helpers */
+@media (max-width: 768px) {
+    .row {
+        flex-direction: column;
+    }
+    
+    .col {
+        width: 100%;
+        margin-bottom: 1rem;
+    }
+    
+    .col:last-child {
+        margin-bottom: 0;
+    }
+}
+
+/* Grid Spacing Utilities */
+.row--no-gutters {
+    margin: 0;
+}
+
+.row--no-gutters .col {
+    padding: 0;
+}
+
+.row--small-gutters {
+    margin: 0 -0.5rem;
+}
+
+.row--small-gutters .col {
+    padding: 0 0.5rem;
+}
+
+.row--large-gutters {
+    margin: 0 -2rem;
+}
+
+.row--large-gutters .col {
+    padding: 0 2rem;
 }
